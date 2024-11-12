@@ -1,0 +1,169 @@
+<HTML>
+<HEAD>
+<TITLE>galería</TITLE>
+</HEAD>
+
+<body background="qiw.png">
+
+<H5> <CENTER><img src="gallery.png" heigth=500px width=400px></CENTER></H5>
+
+
+
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Galería Estética</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 20px;
+            background-color: #f0f0f0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        h1 {
+            margin-bottom: 20px;
+            color: #FFF;
+            text-align: center;
+            font-size: 2em;
+            font-family: 'Times New Roman', Perpetua;
+            border-bottom: 2px solid #FFFF;
+            padding-bottom: 10px;
+        }
+        .galeria {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+            gap: 15px;
+            max-width: 1000px;
+            background-color: #000;
+            padding: 15px;
+            border-radius: 10px;
+        }
+        .galeria img {
+            width: 100%;
+            border-radius: 10px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.5);
+            transition: transform 0.3s, box-shadow 0.3s;
+            cursor: pointer;
+        }
+        .galeria img:hover {
+            transform: scale(1.05);
+            box-shadow: 0 4px 20px rgba(255, 255, 255, 0.5);
+        }
+
+        /* Lightbox */
+        #lightbox {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.8);
+            display: none;
+            justify-content: center;
+            align-items: center;
+            z-index: 1000;
+        }
+        #lightbox img {
+            max-width: 90%;
+            max-height: 90%;
+        }
+        .cerrar {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            color: #fff;
+            font-size: 2em;
+            background-color: rgba(0, 0, 0, 0.5);
+            padding: 10px;
+            border-radius: 50%;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+
+<iframe width="560" height="315" src="https://www.youtube.com/embed/7wHkKuxIYEU?si=Bz3mB2KwdvngEFej" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+
+<h1>Galería Estética</h1>
+
+<div class="galeria">
+    <img src="jeikei.jpg" alt="jungkook" onclick="openLightbox('jeikei.jpg')">
+    <img src="122.jpg" alt="Descripción de foto 2" onclick="openLightbox('122.jpg')">
+    <img src="123.jpg" alt="Descripción de foto 3" onclick="openLightbox('123.jpg')">
+    <img src="124.jpg" alt="Descripción de foto 4" onclick="openLightbox('124.jpg')">
+    <img src="133.jpg" alt="Descripción de foto 5" onclick="openLightbox('133.jpg')">
+    <img src="134.jpg" alt="Descripción de foto 6" onclick="openLightbox('134.jpg')">
+    <img src="135.jpg" alt="Descripción de foto 7" onclick="openLightbox('135.jpg')">
+    <img src="136.jpg" alt="Descripción de foto 8" onclick="openLightbox('136.jpg')">
+    <img src="129.jpg" alt="Descripción de foto 9" onclick="openLightbox('129.jpg')">
+    <img src="130.jpg" alt="Descripción de foto 10" onclick="openLightbox('130.jpg')">
+    <img src="132.jpg" alt="Descripción de foto 12" onclick="openLightbox('132.jpg')">
+    <img src="131.jpg" alt="Descripción de foto 11" onclick="openLightbox('131.jpg')">
+    <img src="125.jpg" alt="Descripción de foto 5" onclick="openLightbox('125.jpg')">
+    <img src="126.jpg" alt="Descripción de foto 6" onclick="openLightbox('126.jpg')">
+    <img src="127.jpg" alt="Descripción de foto 7" onclick="openLightbox('127.jpg')">
+    <img src="1288.jpg" alt="Descripción de foto 8" onclick="openLightbox('1288.jpg')">
+    <img src="140.jpg" alt="jungkook" onclick="openLightbox('140.jpg')">
+    <img src="141.jpg" alt="Descripción de foto 2" onclick="openLightbox('141.jpg')">
+    <img src="142.jpg" alt="Descripción de foto 3" onclick="openLightbox('142.jpg')">
+    <img src="1433.jpg" alt="Descripción de foto 4" onclick="openLightbox('1433.jpg')">
+    <img src="144.jpg" alt="jungkook" onclick="openLightbox('144.jpg')">
+    <img src="145.jpg" alt="Descripción de foto 2" onclick="openLightbox('145.jpg')">
+    <img src="1466.jpg" alt="Descripción de foto 3" onclick="openLightbox('1466.jpg')">
+    <img src="1477.jpg" alt="Descripción de foto 4" onclick="openLightbox('1477.jpg')">
+</div>
+
+<!-- Lightbox -->
+<div id="lightbox" onclick="closeLightbox()">
+    <span class="cerrar" onclick="closeLightbox()">X</span>
+    <img id="lightbox-img" src="" alt="">
+</div>
+
+<script>
+    // Función para abrir el lightbox
+    function openLightbox(imageSrc) {
+        var lightbox = document.getElementById('lightbox');
+        var lightboxImg = document.getElementById('lightbox-img');
+        lightbox.style.display = 'flex';
+        lightboxImg.src = imageSrc;
+    }
+
+    // Función para cerrar el lightbox
+    function closeLightbox() {
+        var lightbox = document.getElementById('lightbox');
+        lightbox.style.display = 'none';
+    }
+</script>
+
+</body>
+</html>
+
+
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Video Local</title>
+</head>
+<body>
+    <h1> - MY   TIME - </h1>
+<h2>  SONG BY JUNGKOOK  </h2>
+    <video width="640" height="360" controls>
+        <source src="mytime.mp4" type="video/mp4">
+    </video>
+</body>
+</html>
+
+<p> <H1> <RIGHT><a href="file:///C:/Users/PC05/Documents/pagina%20web/proyeecto%20web.html">  BACK HOME </a><FONT COLOR="WHITE"></CENTER>></H16>
+
+</body>
+</html>
+
